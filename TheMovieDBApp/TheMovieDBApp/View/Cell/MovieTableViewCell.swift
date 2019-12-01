@@ -37,7 +37,7 @@ class MovieTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.heartButton.tintColor = UIColor.white
+        self.heartButton.tintColor = UIColor.lightGray
 
     }
     
@@ -48,7 +48,7 @@ class MovieTableViewCell: UITableViewCell {
         if fav {
             self.heartButton.tintColor = UIColor.orange
         } else {
-            self.heartButton.tintColor = UIColor.white
+            self.heartButton.tintColor = UIColor.lightGray
         }
         if let _value = value {
             

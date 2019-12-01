@@ -88,7 +88,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             print("ok")
         }
     }
-
+    
 }
 
 extension HomeViewController: MovieControllerDelegate {
@@ -105,12 +105,12 @@ extension HomeViewController: MovieControllerDelegate {
 
 
 extension HomeViewController: MovieTableViewCellDelegate {
-   
+    
     func successAddFavorite(index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         let movieToSave = self.controller?.loadCurrentMovie(indexPath: indexPath)
         datacontroller.saveMovie(id: movieToSave?.id ?? 0, title: movieToSave?.originalTitle ?? "", overview: movieToSave?.overview ?? "", coverURL: movieToSave?.posterPath ?? "" )
-
+        
         datacontroller.loadMovie { (movies) in
             self.favoriteMovies.removeAll()
             self.favoriteMovies = movies
